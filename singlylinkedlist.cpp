@@ -12,6 +12,19 @@ class node
         this -> data = data;
         this -> next = NULL;
     }
+    ~node()
+    {
+        int value = this->data;
+        // memory free
+        if(this->next!=NULL)
+        {
+            delete next;
+            this->next=NULL;
+
+        }
+        cout<<endl;
+        cout<<"memory with data value "<<value<<" is deleted "<<endl;
+    }
 
 
 };
@@ -73,6 +86,44 @@ void insertinposition(node* &tail,node* &head,int position, int d)
 
 }
 
+void deletion(node* & head, int position)
+{
+
+    if(position==1)
+    {
+        // if pos =1 then we need to shift the head and we need to free the memnory
+        node* temp=head;
+        head=head->next;
+        // memory free by using the destructor function
+        temp->next= NULL; // for removing the pointer or to cut its connection with the next node which it is still pointing
+        delete temp;
+    }
+    else
+    {
+
+        int current=1;
+        node* prev = NULL ;
+        node * curr = head;
+        while(current<position)
+        {
+            prev=curr;
+            curr=curr->next;
+            current++;
+        }
+        prev->next=curr->next;
+        if(curr->next==NULL)
+        {
+            prev->next=NULL;
+        }
+        curr->next=NULL; // we did this because curr is still pointing to the next node, so we need to delete the pointer pointing to the next 
+        delete curr;
+        
+    
+    }
+
+
+}
+
 int main()
 {
     // created a new node
@@ -91,6 +142,9 @@ int main()
     print(head);
     cout<<endl;
     insertinposition(tail,head,3, 1);
+    print(head);
+    deletion(head,6);
+    // deletion(head,5);
     print(head);
 
     return 0;
