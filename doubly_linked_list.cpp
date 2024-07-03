@@ -64,34 +64,63 @@ void insertathead(node* &head, int d)
     head=temp;
 
 }
-// void insertattail(node* &head,node* & tail, int d)
-// {
-//     node * temp = new node(d);
-//     node * curr = head;
-//     while(curr->next!=NULL)
-//     {
-//         curr=curr->next;
-//     }
-//     curr->next = temp;
-//     tail = temp;
-
-// }
-
-void printinreverse(node* &head)
+void insertattail(node* &tail, int d)
 {
-    node* temp=head;
-    while(temp->next!=NULL)
-    {
-        temp=temp->next;
-    }
+    node * temp = new node(d);
+    tail->next=temp;
+    temp->prev=tail;
+    tail=temp;
+    
 
-    while(temp!=NULL)
-    {
-        cout<<temp->data<<"<-";
-        temp=temp->prev;
-    }
-    cout<<"NULL";
 }
+
+void printinreverse(node* &tail)
+{
+
+    node * temp= tail;
+    while(tail!=NULL)
+    {
+        cout<<tail->data<<"<-";
+        tail=tail->prev;
+    }
+    cout<<"NULL"<<endl;
+
+}
+
+
+void insertatposition(node* &head, node* &tail, int position, int d)
+{
+    int current=1;
+    if(position==1)
+    {
+        insertathead(head,d);
+        return;
+    }
+    else
+    {
+        node* front = head;
+        node * back;
+        node * temp= new node(d);
+
+        while(current<position)
+        {
+            back=front;
+            front=front->next;
+            current++;
+            if(front->next==NULL)
+            {
+                insertattail(tail,d);
+                return;
+            }
+        }
+        temp->next=front;
+        front->prev=temp;
+        back->next=temp;
+        temp->prev=back;
+
+    }
+}
+
 
 int main()
 {
@@ -101,9 +130,14 @@ int main()
     insertathead(head,20);
     insertathead(head,30);
     insertathead(head,40);
+    // print(head);
+    cout<<endl;
+    insertattail(tail,0);
     print(head);
     cout<<endl;
-    printinreverse(head);
-    // insertattail(head,tail,0);
+    // printinreverse(tail);
+    insertatposition(head,tail,4,1000);
+    cout<<endl;
+    print(head);
     return 0;
 }
