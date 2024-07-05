@@ -155,7 +155,7 @@ void deletenode(node* &head, node* & tail, int position)
         delete front;
     }
 }
-
+// in case of single ll we need only head or tail(only one) pointer and need to point the pointer or connection according to the requirement.
 
 int main()
 {
@@ -165,23 +165,10 @@ int main()
     insertathead(head,20);
     insertathead(head,30);
     insertathead(head,40);
-    // print(head);
-    cout<<endl;
     insertattail(tail,0);
-    print(head);
-    cout<<endl;
-    // printinreverse(tail);
     insertatposition(head,tail,4,1000);
     cout<<endl;
     print(head);
-    deletenode(head,tail,3); // deletion in between
-    cout<<endl;
-    print(head);
-    deletenode(head,tail,1); // deletion in beginning of the list
-    cout<<endl;
-    print(head);
-    deletenode(head,tail,4); // deletion at the end of the list
-    cout<<endl;
-    print(head);
+    
     return 0;
 }
