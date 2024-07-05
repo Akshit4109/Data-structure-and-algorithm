@@ -121,6 +121,41 @@ void insertatposition(node* &head, node* &tail, int position, int d)
     }
 }
 
+void deletenode(node* &head, node* & tail, int position)
+{
+    int current=1;
+    node* front=head;
+    node * back=head;
+    if(position==1)
+    {
+        node* temp=head;
+        temp->next->prev=NULL;
+        head= temp->next;
+        temp->next=NULL;
+        delete temp;
+        
+    }
+    else
+    {
+        while(current<position)
+        {
+            back=front;
+            front=front->next;
+            current++;
+            if(front->next==NULL)
+            {
+                back->next=NULL;
+                return;
+            }
+        }
+        back->next=front->next;
+        front->next->prev=back;
+        front->next=NULL;
+        front->prev=NULL;
+        delete front;
+    }
+}
+
 
 int main()
 {
@@ -139,5 +174,14 @@ int main()
     insertatposition(head,tail,4,1000);
     cout<<endl;
     print(head);
+    deletenode(head,tail,3); // deletion in between
+    cout<<endl;
+    print(head);
+    // deletenode(head,tail,1); // deletion in beginning of the list
+    // cout<<endl;
+    // print(head);
+    // deletenode(head,tail,4); // deletion at the end of the list
+    // cout<<endl;
+    // print(head);
     return 0;
 }
