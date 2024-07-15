@@ -5,11 +5,11 @@ using namespace std;
 
 int main()
 {
-    int arr[]={1,1,1,4,2,2,3,3};
+    int arr[]={1,1,1,4,2,2,3};
     int k;
     unordered_map<int, int> mp;
     // priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > minh;
-    priority_queue<pair<int,int> > minh;
+    priority_queue<pair<int,int> > minh; // implemented max heap but name is minh;
 
     for(int i=0;i<7;i++)
     {

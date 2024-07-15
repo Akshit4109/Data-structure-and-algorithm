@@ -1,4 +1,4 @@
-for(int i=0;i<7;i++)
-    // {
-    //     cout<<mp.second
-    // }
+ // cout<<"enter the value of k1 = "<<endl;
+    // cin>>k1;
+    // cout<<"enter the value of k2 = "<<endl;
+    // cin>>k2;
