@@ -13,6 +13,7 @@ void kth_closest_number(int arr[], int size, int k, int x)
     for(int i = 0; i < size; i++)
     {
         int diff = abs(arr[i] - x);
+        // this maxh element on the top will be on the bases of index not the element
         maxh.push(make_pair(diff, arr[i]));
 
         // Keep the size of the heap to k

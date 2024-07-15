@@ -1,4 +1,4 @@
-if(curr->next==NULL)
-        // {
-        //     prev->next=NULL;
-        // }
+for(int i=0;i<7;i++)
+    // {
+    //     cout<<mp.second
+    // }
