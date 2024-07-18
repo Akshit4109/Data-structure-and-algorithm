@@ -18,7 +18,7 @@ bool longest_subsequence_subset(int arr[],int sum,int size) // weight arr -> arr
             }
         }
 
-        for(int i=1;i<=size;i++)
+    for(int i=1;i<=size;i++)
     {
         for(int j=1;j<=sum;j++)
         {
