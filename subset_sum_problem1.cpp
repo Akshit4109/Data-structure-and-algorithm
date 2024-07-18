@@ -2,7 +2,7 @@
 using namespace std;
 bool t[102][1002];
 
-bool longest_subsequence_subset(int arr[],int sum,int size) // weight arr -> arr[], weight = sum;
+bool longest_subsequence_subset(int arr[],int sum,int size) // weight arr -> arr[], weight = sum; // function name is common subset
 {
     for(int i=0;i<size;i++)
     {

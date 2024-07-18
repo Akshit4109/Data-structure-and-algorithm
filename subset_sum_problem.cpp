@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-bool t[6][12];
+bool t[102][1002];
 
 bool longest_subsequence_subset(int arr[],int sum,int size) // weight arr -> arr[], weight = sum;
 {
@@ -31,7 +31,7 @@ int main()
     int size=sizeof(arr)/sizeof(arr[0]);
     int sum=121;
     memset(t,false,sizeof(arr));
-    bool result=longest_subsequence_subset(arr,size,sum);
+    bool result=longest_subsequence_subset(arr,sum,size);
     cout<<result;
     return 0;
 }
