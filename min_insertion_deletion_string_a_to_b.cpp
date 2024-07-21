@@ -1,8 +1,9 @@
 #include<iostream>
+#include<utility>
 using namespace std;
 int static t[101][101];
 
-int longest_subsequence_subset(string x, string y , int n , int m)
+pair<int, int> longest_subsequence_subset(string x, string y , int n , int m)
 {
     // base condition
     for(int i=0;i<=n;i++)
@@ -34,18 +35,24 @@ int longest_subsequence_subset(string x, string y , int n , int m)
     
         }
     }
-    int common_substrin_length=t[n][m];
-    return m+n-common_substrin_length;
+    //  for finding number of insertion and deletion
+    int lcs=t[n][m];
+    int deletion = n - lcs;
+    int insertion = m - lcs;
+    pair<int,int> p;
+    return make_pair(deletion,insertion);
+
 }
 
 int main()
 {
-    string x = "aggtab";
-    string y = "gxtxayb";
+    string x = "heap";
+    string y = "pea";
     int n = x.length();
     int m = y.length();
     memset(t,-1,sizeof(t));
-    int result = longest_subsequence_subset(x,y,n,m);
-    cout<<"length of lcs is "<<result;
+    pair<int,int> result = longest_subsequence_subset(x,y,n,m);
+    cout << "Deletions: " << result.first << ", Insertions: " << result.second << endl;
+
     return 0;
 }
