@@ -65,7 +65,7 @@ string longest_subsequence_subset(string x, string y , int n , int m)
 int main()
 {
     string x = "abcdgh";
-    string y = "abedfha";
+    string y = "abcdfha";
     int n = x.length();
     int m = y.length();
     memset(t,-1,sizeof(t));
