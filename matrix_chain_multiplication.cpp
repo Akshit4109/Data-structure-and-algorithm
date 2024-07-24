@@ -11,6 +11,7 @@ int matrix_chain_multiplication(int arr[],int i,int j)
     int mini = INT_MAX;
     for(int k=i;k<j;k++)
     {
+        // to find the cost of the multiplication
         int temp_ans = matrix_chain_multiplication( arr, i, k)  + matrix_chain_multiplication( arr, k+1, j) + (arr[i-1]*arr[k]*arr[j]);
         if(mini>temp_ans)
         {
