@@ -41,7 +41,7 @@ bool sequence_pattern_matching(string x, string y , int n , int m)
 
 int main()
 {
-    string x = "axyz";
+    string x = "axy";
     string y = "adxcpy";
     int n = x.length();
     int m = y.length();
