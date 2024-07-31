@@ -4,19 +4,16 @@ using namespace std;
 
 bool isprime(int number)
 {
-    if(number==0)
+    if(number<=1)
     {
         return false;
-    }
-    if(number==1)
-    {
-        return true;
     }
     int n= sqrt(number);
     for(int i=2;i<=n;i++)
     {
         if(number%i==0)
         {
+            
             return false;
         }
     }

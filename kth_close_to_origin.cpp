@@ -33,7 +33,7 @@ int main()
     }
     while(!pq.empty())
     {
-        pair<int,int> p=pq.top().second;
+        pair<int,int> p = pq.top().second;
         cout<<p.first<<" "<<p.second<<endl;
         pq.pop();
     }
