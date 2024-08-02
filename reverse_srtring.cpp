@@ -26,15 +26,15 @@ string reverseWords(const string &str) {
     }
     
     // Reverse the order of words
-    // reverse(words.begin(), words.end());
+    reverse(words.begin(), words.end());
     
-    // // Build the result string with reversed words
-    // for (size_t i = 0; i < words.size(); ++i) {
-    //     if (i > 0) {
-    //         result += " "; // Add space between words
-    //     }
-    //     result += words[i];
-    // }
+    // Build the result string with reversed words
+    for (size_t i = 0; i < words.size(); ++i) {
+        if (i > 0) {
+            result += " "; // Add space between words
+        }
+        result += words[i];
+    }
 
     return result;
 }
