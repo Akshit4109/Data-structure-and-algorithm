@@ -14,8 +14,8 @@ bool isValid(string s) {
     stack<char> stk;
 
 
-    for (char c : s) {
-        if (matchingBracket.find(c) != matchingBracket.end()) {
+        for (char& c : s) {
+        if (matchingBracket.find(c) != matchingBracket.end()) {  // checks if character(bracket) is available in map
             if (stk.empty() || stk.top() != matchingBracket[c]) {
                 return false;
             }
